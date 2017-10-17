@@ -1,8 +1,8 @@
 //
-//  Show Entry Line.swift
-//  Firebase_Test
+//  Show Entry 2.swift
+//  Server Link
 //
-//  Created by Warren Hansen on 10/10/17.
+//  Created by Warren Hansen on 10/17/17.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 //
 
@@ -98,7 +98,5 @@ class ShowEntry {
         lineText.style.textStyle.color = textColor
         return lineText
     }
-
+    
 }
-
-

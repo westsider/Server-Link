@@ -425,7 +425,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4E1-8f-312"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -435,6 +435,9 @@
                                     <constraint firstAttribute="height" constant="29" id="FaQ-TU-XRd"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="dayStepperButton:" destination="Wyl-ib-osf" eventType="valueChanged" id="ZO4-nq-jFd"/>
+                                </connections>
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -10,7 +10,7 @@
      [X] tableview
      [ ] chart
      [ ] notifications
-     [ ] reset circle at 0
+     [?] reset circle at 0, confirm on Weds, unsure if I am resetting
      [ ] fix main UI bottom Nav
      [ ] black chart
 */
@@ -67,6 +67,7 @@ class UpdateViewController: UIViewController {
         print("Inside AniimateCircle alert: \(alert), reset: \(reset)")
         let replicatorLayer = CAReplicatorLayer()
         if ( reset ) {
+            print("Got the call to reset, removeFromSuperLayer()")
             replicatorLayer.removeFromSuperlayer()
         }
         replicatorLayer.frame = circleView.bounds

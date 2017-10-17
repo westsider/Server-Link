@@ -17,6 +17,8 @@
 		0D819AB61F958B1A0096B5EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D819AB41F958B1A0096B5EB /* LaunchScreen.storyboard */; };
 		0D8D735D1F967F5B00C59AD4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D735C1F967F5B00C59AD4 /* TableViewController.swift */; };
 		0D8D735F1F96821000C59AD4 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D735E1F96821000C59AD4 /* ChartViewController.swift */; };
+		0D8D73611F96967A00C59AD4 /* Show Trades 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D73601F96967A00C59AD4 /* Show Trades 2.swift */; };
+		0D8D73631F9696DD00C59AD4 /* Show Entry 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D73621F9696DD00C59AD4 /* Show Entry 2.swift */; };
 		0DE7F2FE1F95F640002CD661 /* Firebase Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7F2FD1F95F640002CD661 /* Firebase Link.swift */; };
 		0DE7F3021F95F6A2002CD661 /* Prices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7F3011F95F6A2002CD661 /* Prices.swift */; };
 		0DE7F3061F95F93D002CD661 /* Date Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7F3051F95F93D002CD661 /* Date Utility.swift */; };
@@ -37,9 +39,9 @@
 		0D819AB71F958B1A0096B5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D8D735C1F967F5B00C59AD4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		0D8D735E1F96821000C59AD4 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		0D8D73601F96967A00C59AD4 /* Show Trades 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Show Trades 2.swift"; sourceTree = "<group>"; };
+		0D8D73621F9696DD00C59AD4 /* Show Entry 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Show Entry 2.swift"; sourceTree = "<group>"; };
 		0DE7F2FA1F95F22A002CD661 /* Convert Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Convert Color.swift"; sourceTree = "<group>"; };
-		0DE7F2FB1F95F232002CD661 /* Show Trades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Show Trades.swift"; sourceTree = "<group>"; };
-		0DE7F2FC1F95F252002CD661 /* Show Entry Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Show Entry Line.swift"; sourceTree = "<group>"; };
 		0DE7F2FD1F95F640002CD661 /* Firebase Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase Link.swift"; sourceTree = "<group>"; };
 		0DE7F3011F95F6A2002CD661 /* Prices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prices.swift; sourceTree = "<group>"; };
 		0DE7F3051F95F93D002CD661 /* Date Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date Utility.swift"; sourceTree = "<group>"; };
@@ -76,8 +78,8 @@
 				0D12C7FF1F95FCA0005C3D3F /* Time Utility.swift */,
 				0DE7F3011F95F6A2002CD661 /* Prices.swift */,
 				0DE7F2FA1F95F22A002CD661 /* Convert Color.swift */,
-				0DE7F2FB1F95F232002CD661 /* Show Trades.swift */,
-				0DE7F2FC1F95F252002CD661 /* Show Entry Line.swift */,
+				0D8D73601F96967A00C59AD4 /* Show Trades 2.swift */,
+				0D8D73621F9696DD00C59AD4 /* Show Entry 2.swift */,
 				0DE7F2FD1F95F640002CD661 /* Firebase Link.swift */,
 			);
 			path = Model;
@@ -264,6 +266,8 @@
 				0D8D735D1F967F5B00C59AD4 /* TableViewController.swift in Sources */,
 				0D819AAC1F958B1A0096B5EB /* AppDelegate.swift in Sources */,
 				0D8D735F1F96821000C59AD4 /* ChartViewController.swift in Sources */,
+				0D8D73611F96967A00C59AD4 /* Show Trades 2.swift in Sources */,
+				0D8D73631F9696DD00C59AD4 /* Show Entry 2.swift in Sources */,
 				0DE7F3021F95F6A2002CD661 /* Prices.swift in Sources */,
 				0DE7F3061F95F93D002CD661 /* Date Utility.swift in Sources */,
 				0D12C8001F95FCA0005C3D3F /* Time Utility.swift in Sources */,
