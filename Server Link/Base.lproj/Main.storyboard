@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Update View Controller-->
         <scene sceneID="vgN-cn-hS3">
             <objects>
-                <viewController id="tKu-mI-o7L" customClass="MainViewController" customModule="Firebase_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tKu-mI-o7L" customClass="UpdateViewController" customModule="Server_Link" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J2B-qg-I7s"/>
                         <viewControllerLayoutGuide type="bottom" id="vB0-k3-IP7"/>
@@ -161,7 +161,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14C-Pr-QcM">
-                                                        <rect key="frame" x="31" y="22" width="117" height="25"/>
+                                                        <rect key="frame" x="31" y="22" width="116.5" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="09K-uU-iUG"/>
                                                         </constraints>
@@ -307,6 +307,16 @@
                         <viewLayoutGuide key="safeArea" id="Ioh-XV-RYZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="86W-8c-Spk"/>
+                    <connections>
+                        <outlet property="circleView" destination="BUP-Pn-5c2" id="tYW-my-9hs"/>
+                        <outlet property="lastPriceLabel" destination="yUJ-kw-ms0" id="LIG-0Z-AVT"/>
+                        <outlet property="lastPriceTop" destination="XOr-PO-fUA" id="aAW-IS-oxF"/>
+                        <outlet property="lastUpdateTime" destination="9tA-fy-BMK" id="egf-TS-MNe"/>
+                        <outlet property="priceCurrentLabel" destination="2kd-4V-BpB" id="AFv-ED-Knd"/>
+                        <outlet property="priceDifferenceLabel" destination="8c8-zJ-eir" id="fhP-Db-1tl"/>
+                        <outlet property="serverConnectTime" destination="Npa-TQ-BO2" id="BcK-ma-KMO"/>
+                        <outlet property="serverConnectedLable" destination="y94-L6-9RV" id="Wkn-br-bwy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Uo-fH-W5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -328,12 +338,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7W-VE-VYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-812" y="116"/>
+            <point key="canvasLocation" x="-1036" y="116"/>
         </scene>
         <!--Prices-->
         <scene sceneID="7K6-6E-goQ">
             <objects>
-                <viewController storyboardIdentifier="tableVC" title="Prices" automaticallyAdjustsScrollViewInsets="NO" id="Mtu-93-eqi" customClass="TablesViewController" customModule="Firebase_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tableVC" title="Prices" automaticallyAdjustsScrollViewInsets="NO" id="Mtu-93-eqi" customClass="TablesViewController" customModule="Server_Link" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="36u-CY-rvB"/>
                         <viewControllerLayoutGuide type="bottom" id="1PU-zz-mul"/>
@@ -387,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jf9-Aj-Hn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="143.5" y="115.5"/>
+            <point key="canvasLocation" x="337" y="116"/>
         </scene>
     </scenes>
     <resources>
