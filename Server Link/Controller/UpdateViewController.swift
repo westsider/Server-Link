@@ -9,7 +9,8 @@
 //MARK: - TODO
      [ ] tableview
      [ ] chart
-     [ ]notifications
+     [ ] notifications
+     [ ] reset circle at 0
 */
 import UIKit
 import UserNotifications
@@ -127,17 +128,17 @@ class UpdateViewController: UIViewController {
 //        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
-//    @IBAction func toobarTableViewAction(_ sender: Any) {
-//        let myVC = storyboard?.instantiateViewController(withIdentifier: "tableVC") as! TablesViewController
-//        myVC.lastPriceList = firebaseLink.lastPriceList
-//        navigationController?.pushViewController(myVC, animated: true)
-//    }
-//
-//    @IBAction func chartAction(_ sender: Any) {
-//        let myVC = storyboard?.instantiateViewController(withIdentifier: "chartVC") as! ChartViewController
-//        myVC.lastPriceList = firebaseLink.lastPriceList
-//        navigationController?.pushViewController(myVC, animated: true)
-//    }
+    @IBAction func toobarTableViewAction(_ sender: Any) {
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "tableVC") as! TableViewController
+        myVC.lastPriceList = firebaseLink.lastPriceList
+        navigationController?.pushViewController(myVC, animated: true)
+    }
+
+    @IBAction func chartAction(_ sender: Any) {
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "chartVC") as! ChartViewController
+        myVC.lastPriceList = firebaseLink.lastPriceList
+        navigationController?.pushViewController(myVC, animated: true)
+    }
 
     func updateUISegmented() {
         let lastUpdate = firebaseLink.lastPriceList.last
@@ -254,7 +255,6 @@ class UpdateViewController: UIViewController {
                 var reset = false
                 if ( lastConnectionMinuteTotal == 0 ) { reset = true}
                 annimateCircle(alert: lastConnectionMinuteTotal, reset: reset)
-                print("\n----------------------\nWill this control my circle? \(lastConnectionMinuteTotal)\n need 0 - 7")
                 priceCurrentLabel.text = "\(alert.1):\(alert.2) elapsed"                                        // lower left low
             }
             

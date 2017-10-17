@@ -15,6 +15,8 @@
 		0D819AB11F958B1A0096B5EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D819AAF1F958B1A0096B5EB /* Main.storyboard */; };
 		0D819AB31F958B1A0096B5EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D819AB21F958B1A0096B5EB /* Assets.xcassets */; };
 		0D819AB61F958B1A0096B5EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D819AB41F958B1A0096B5EB /* LaunchScreen.storyboard */; };
+		0D8D735D1F967F5B00C59AD4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D735C1F967F5B00C59AD4 /* TableViewController.swift */; };
+		0D8D735F1F96821000C59AD4 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D735E1F96821000C59AD4 /* ChartViewController.swift */; };
 		0DE7F2FE1F95F640002CD661 /* Firebase Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7F2FD1F95F640002CD661 /* Firebase Link.swift */; };
 		0DE7F3021F95F6A2002CD661 /* Prices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7F3011F95F6A2002CD661 /* Prices.swift */; };
 		0DE7F3061F95F93D002CD661 /* Date Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE7F3051F95F93D002CD661 /* Date Utility.swift */; };
@@ -33,6 +35,8 @@
 		0D819AB21F958B1A0096B5EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D819AB51F958B1A0096B5EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D819AB71F958B1A0096B5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D8D735C1F967F5B00C59AD4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		0D8D735E1F96821000C59AD4 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		0DE7F2FA1F95F22A002CD661 /* Convert Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Convert Color.swift"; sourceTree = "<group>"; };
 		0DE7F2FB1F95F232002CD661 /* Show Trades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Show Trades.swift"; sourceTree = "<group>"; };
 		0DE7F2FC1F95F252002CD661 /* Show Entry Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Show Entry Line.swift"; sourceTree = "<group>"; };
@@ -58,6 +62,9 @@
 		0D34B2211F95DFCC00BDCEBB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0D819AAD1F958B1A0096B5EB /* UpdateViewController.swift */,
+				0D8D735E1F96821000C59AD4 /* ChartViewController.swift */,
+				0D8D735C1F967F5B00C59AD4 /* TableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -100,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				0D819AAF1F958B1A0096B5EB /* Main.storyboard */,
-				0D819AAD1F958B1A0096B5EB /* UpdateViewController.swift */,
 				0D34B2221F95DFD700BDCEBB /* Model */,
 				0D34B2211F95DFCC00BDCEBB /* Controller */,
 				0D819AB21F958B1A0096B5EB /* Assets.xcassets */,
@@ -255,7 +261,9 @@
 				0D34B2201F95DFB600BDCEBB /* SCIGenericWrapper.swift in Sources */,
 				0DE7F2FE1F95F640002CD661 /* Firebase Link.swift in Sources */,
 				0D819AAE1F958B1A0096B5EB /* UpdateViewController.swift in Sources */,
+				0D8D735D1F967F5B00C59AD4 /* TableViewController.swift in Sources */,
 				0D819AAC1F958B1A0096B5EB /* AppDelegate.swift in Sources */,
+				0D8D735F1F96821000C59AD4 /* ChartViewController.swift in Sources */,
 				0DE7F3021F95F6A2002CD661 /* Prices.swift in Sources */,
 				0DE7F3061F95F93D002CD661 /* Date Utility.swift in Sources */,
 				0D12C8001F95FCA0005C3D3F /* Time Utility.swift in Sources */,

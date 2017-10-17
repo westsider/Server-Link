@@ -34,11 +34,15 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="m0s-UJ-e8U"/>
                                     <barButtonItem image="List" springLoaded="YES" style="plain" id="FFL-tx-4Yr">
                                         <connections>
-                                            <segue destination="Mtu-93-eqi" kind="show" id="yB4-CZ-OeY"/>
+                                            <action selector="toobarTableViewAction:" destination="tKu-mI-o7L" id="kmR-5q-rEk"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="GYA-qM-Hdh"/>
-                                    <barButtonItem image="Chart_1" id="2rd-wD-ecq"/>
+                                    <barButtonItem image="Chart_1" id="2rd-wD-ecq">
+                                        <connections>
+                                            <action selector="chartAction:" destination="tKu-mI-o7L" id="ruu-Uv-94h"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Yrs-jn-zJO"/>
                                     <barButtonItem image="Tasks" id="Wd5-6M-riX"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Lho-sZ-a8d"/>
@@ -392,12 +396,27 @@
                         <viewLayoutGuide key="safeArea" id="oOR-c7-5SY"/>
                     </view>
                     <connections>
-                        <outlet property="tableview" destination="pLY-Nq-lgD" id="uij-Y4-xWG"/>
+                        <outlet property="tableview" destination="pLY-Nq-lgD" id="Oxa-iA-PHO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jf9-Aj-Hn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="337" y="116"/>
+        </scene>
+        <!--Chart-->
+        <scene sceneID="OWd-Qd-ZvF">
+            <objects>
+                <viewController storyboardIdentifier="chartVC" title="Chart" id="Wyl-ib-osf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HOY-eG-XwL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="gYb-En-faY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pY6-fK-x0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="122"/>
         </scene>
     </scenes>
     <resources>
