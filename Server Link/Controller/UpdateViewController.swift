@@ -7,10 +7,11 @@
 //
 /*
 //MARK: - TODO
-     [ ] tableview
+     [X] tableview
      [ ] chart
      [ ] notifications
      [ ] reset circle at 0
+     [ ] black chart
 */
 import UIKit
 import UserNotifications
@@ -129,12 +130,14 @@ class UpdateViewController: UIViewController {
     }
     
     @IBAction func toobarTableViewAction(_ sender: Any) {
+        print("Tapped Tableview")
         let myVC = storyboard?.instantiateViewController(withIdentifier: "tableVC") as! TableViewController
         myVC.lastPriceList = firebaseLink.lastPriceList
         navigationController?.pushViewController(myVC, animated: true)
     }
 
     @IBAction func chartAction(_ sender: Any) {
+        print("Tapped Charts")
         let myVC = storyboard?.instantiateViewController(withIdentifier: "chartVC") as! ChartViewController
         myVC.lastPriceList = firebaseLink.lastPriceList
         navigationController?.pushViewController(myVC, animated: true)
@@ -248,12 +251,12 @@ class UpdateViewController: UIViewController {
                 }
                 
                 lastUpdateTime.text = serverDateString.2   // lower left high
-                // alert.2 is the cue for the circle... 2, 5, 7, 10, 12
-                // alertForAnnimation = alert.2
                 let lastConnectionMinuteTotal = alert.3
                 print("\nSending Data to animation circle! lastCommectionTotal: \(lastConnectionMinuteTotal) if 0 then reset!")
                 var reset = false
-                if ( lastConnectionMinuteTotal == 0 ) { reset = true}
+                if ( lastConnectionMinuteTotal < 5 ) {
+                    print("Reset circle because MinTotal = \(lastConnectionMinuteTotal)")
+                    reset = true}
                 annimateCircle(alert: lastConnectionMinuteTotal, reset: reset)
                 priceCurrentLabel.text = "\(alert.1):\(alert.2) elapsed"                                        // lower left low
             }

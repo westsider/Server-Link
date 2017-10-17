@@ -12,11 +12,12 @@ import SciChart
 
 class ChartViewController: UIViewController {
     
-//    @IBOutlet weak var chartView: UIView!
-//
-//    @IBOutlet weak var daysLabel: UILabel!
-//
-//    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var chartView: UIView!
+
+    @IBOutlet weak var daysLabel: UILabel!
+    
+    @IBOutlet weak var stepper: UIStepper!
+ 
 //
 //    let xAxis = SCICategoryDateTimeAxis()
 //

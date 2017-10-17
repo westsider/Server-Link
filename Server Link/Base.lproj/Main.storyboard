@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PingFang.ttc">
+            <string>PingFangHK-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Update View Controller-->
         <scene sceneID="vgN-cn-hS3">
@@ -347,7 +352,7 @@
         <!--Prices-->
         <scene sceneID="7K6-6E-goQ">
             <objects>
-                <viewController storyboardIdentifier="tableVC" title="Prices" automaticallyAdjustsScrollViewInsets="NO" id="Mtu-93-eqi" customClass="TablesViewController" customModule="Server_Link" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tableVC" title="Prices" automaticallyAdjustsScrollViewInsets="NO" id="Mtu-93-eqi" customClass="TableViewController" customModule="Server_Link" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="36u-CY-rvB"/>
                         <viewControllerLayoutGuide type="bottom" id="1PU-zz-mul"/>
@@ -396,7 +401,7 @@
                         <viewLayoutGuide key="safeArea" id="oOR-c7-5SY"/>
                     </view>
                     <connections>
-                        <outlet property="tableview" destination="pLY-Nq-lgD" id="Oxa-iA-PHO"/>
+                        <outlet property="tableview" destination="pLY-Nq-lgD" id="2QM-kB-rqf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jf9-Aj-Hn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -406,17 +411,58 @@
         <!--Chart-->
         <scene sceneID="OWd-Qd-ZvF">
             <objects>
-                <viewController storyboardIdentifier="chartVC" title="Chart" id="Wyl-ib-osf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chartVC" title="Chart" id="Wyl-ib-osf" customClass="ChartViewController" customModule="Server_Link" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HOY-eG-XwL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHF-g8-cAZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="629"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75 Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="us7-z1-Qn5">
+                                <rect key="frame" x="52.5" y="637" width="67.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4E1-8f-312"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="75" minimumValue="3" maximumValue="300" stepValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="9VT-Pk-wJl">
+                                <rect key="frame" x="135" y="633" width="94" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="FaQ-TU-XRd"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stepper>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="us7-z1-Qn5" firstAttribute="top" secondItem="AHF-g8-cAZ" secondAttribute="bottom" constant="8" id="0yw-mU-mCR"/>
+                            <constraint firstItem="AHF-g8-cAZ" firstAttribute="trailing" secondItem="gYb-En-faY" secondAttribute="trailing" id="75W-vP-taW"/>
+                            <constraint firstItem="gYb-En-faY" firstAttribute="bottom" secondItem="us7-z1-Qn5" secondAttribute="bottom" constant="9" id="AhW-dJ-xJv"/>
+                            <constraint firstItem="9VT-Pk-wJl" firstAttribute="leading" secondItem="us7-z1-Qn5" secondAttribute="trailing" constant="15" id="FRb-d4-9b3"/>
+                            <constraint firstItem="9VT-Pk-wJl" firstAttribute="leading" secondItem="us7-z1-Qn5" secondAttribute="trailing" constant="15" id="IJ4-Wp-oX3"/>
+                            <constraint firstItem="gYb-En-faY" firstAttribute="trailing" secondItem="9VT-Pk-wJl" secondAttribute="trailing" constant="146" id="PKk-y8-nZu"/>
+                            <constraint firstItem="AHF-g8-cAZ" firstAttribute="top" secondItem="HOY-eG-XwL" secondAttribute="top" id="XBZ-CT-gRu"/>
+                            <constraint firstItem="us7-z1-Qn5" firstAttribute="leading" secondItem="gYb-En-faY" secondAttribute="leading" constant="52.5" id="dJp-61-MOc"/>
+                            <constraint firstItem="gYb-En-faY" firstAttribute="bottom" secondItem="9VT-Pk-wJl" secondAttribute="bottom" constant="5" id="hQy-FR-mNb"/>
+                            <constraint firstItem="AHF-g8-cAZ" firstAttribute="leading" secondItem="gYb-En-faY" secondAttribute="leading" id="ica-4a-Zkj"/>
+                            <constraint firstItem="9VT-Pk-wJl" firstAttribute="top" secondItem="AHF-g8-cAZ" secondAttribute="bottom" constant="4" id="pO5-zw-aou"/>
+                            <constraint firstItem="9VT-Pk-wJl" firstAttribute="top" secondItem="AHF-g8-cAZ" secondAttribute="bottom" constant="4" id="ukU-L9-4ij"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gYb-En-faY"/>
                     </view>
+                    <connections>
+                        <outlet property="chartView" destination="AHF-g8-cAZ" id="Hnf-Cn-5W0"/>
+                        <outlet property="daysLabel" destination="us7-z1-Qn5" id="G1a-0Z-43S"/>
+                        <outlet property="stepper" destination="9VT-Pk-wJl" id="xHS-1t-onb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pY6-fK-x0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="122"/>
+            <point key="canvasLocation" x="968.79999999999995" y="121.88905547226388"/>
         </scene>
     </scenes>
     <resources>
