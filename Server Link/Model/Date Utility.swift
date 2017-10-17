@@ -78,9 +78,10 @@ class DateHelper {
         if ( debug ) { print("\nCalc Diff In Minutes ---------------------") }
         var alert = false
         if ( debug ) { print("Subtracting \(server) from \(local)") }
-        let minuteTotal = Calendar.current.dateComponents([.minute], from: server, to: local).minute ?? 0
+        var minuteTotal = Calendar.current.dateComponents([.minute], from: server, to: local).minute ?? 0
         let hours = Int(minuteTotal / 60)
         let minLeft = minuteTotal - ( hours * 60 )
+        if minuteTotal > 1500 { minuteTotal = 30 }
         if ( debug ) { print("\nminuteTotal \(minuteTotal) Hours: \(hours) minLeft: \(minLeft)\n") }
         // if greater that 30 mins send alert
         
