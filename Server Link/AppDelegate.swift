@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseCore
+import FirebaseMessaging
+import FirebaseInstanceID
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge ]) { (isGranted, err) in
+//            if err != nil {
+//                print("something bad happened in Notifiction auth")
+//            } else {
+//                UNUserNotificationCenter.current().delegate = self
+//                Messaging.messaging().delegate = self
+//
+//                DispatchQueue.main.async {
+//                    application.registerForRemoteNotifications()
+//                    let newToken = InstanceID.instanceID().token()
+//                    print("\nToken: \(newToken!)\n")
+//                }
+//
+//            }
+//        }
+        
+        FirebaseApp.configure()
         return true
     }
 

@@ -100,7 +100,7 @@ class FirebaseLink {
                     for item in self.lastPriceList {
                         print(item.date!, item.ticker!, item.open!, item.high!, item.low!, item.close!,
                               item.signal!, item.trade!, item.bartype!, item.connectStatus!, item.connectTime!, item.longEntryPrice!, item.shortEntryPrice!, item.longLineLength!, item.shortLineLength!, item.currentBar!, item.inLong!, item.inShort!)
-                       // self.counter = self.counter + 1
+                        // self.counter = self.counter + 1
                     }
                 }
                 dataComplete(true) // i put this after the network call and the real write
@@ -108,3 +108,4 @@ class FirebaseLink {
         })
     }
 }
+

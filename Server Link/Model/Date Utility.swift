@@ -1,8 +1,8 @@
 //
-//  Dates.swift
-//  Firebase_Test
+//  Date Utility.swift
+//  Server Link
 //
-//  Created by Warren Hansen on 10/2/17.
+//  Created by Warren Hansen on 10/17/17.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 //
 
@@ -28,7 +28,7 @@ class DateHelper {
         formatter.timeZone = TimeZone(secondsFromGMT: 0)
         return formatter.string(from: date)
     }
-
+    
     let formatter = DateFormatter()
     let today = Date()
     
@@ -71,7 +71,7 @@ class DateHelper {
         return ( serverDate!, serverString, serverTImeOnlyString  )
     }
     // problem area ---------------------------------------------------------------------
-
+    
     // get difference in minutes
     func calcDiffInMinHours(from local: Date, server: Date, debug: Bool)-> (Bool, Int, Int, Int) {
         
