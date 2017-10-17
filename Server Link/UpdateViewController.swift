@@ -5,7 +5,12 @@
 //  Created by Warren Hansen on 10/16/17.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 //
-
+/*
+//MARK: - TODO
+     [ ] tableview
+     [ ] chart
+     [ ]notifications
+*/
 import UIKit
 import UserNotifications
 
