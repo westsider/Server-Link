@@ -8,11 +8,11 @@
 /*
 //MARK: - TODO
      [X] tableview
-     [ ] chart
+     [X] chart
      [ ] notifications
      [?] reset circle at 0, confirm on Weds, unsure if I am resetting
      [ ] fix main UI bottom Nav
-     [ ] black chart
+     [X] black chart
 */
 import UIKit
 import UserNotifications
