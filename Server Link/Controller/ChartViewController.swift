@@ -38,19 +38,14 @@ class ChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //        stepper.maximumValue = 120
-        //        stepper.minimumValue = 7
-        //        stepper.stepValue = 7
-        //        stepper.wraps = false
-
-        addSurface()
+        addWhiteSurface()
         if UIDevice().model == "iPad" {
-            addAxis(BarsToShow: 150)
+            addWhiteAxis(BarsToShow: 150)
         } else {
-            addAxis(BarsToShow: 75)
+            addWhiteAxis(BarsToShow: 75)
         }
         addDefaultModifiers()
-        addDataSeries()
+        addWhiteDataSeries()
         surface.annotations.add( showEntry.getTradeEntry(allPrices: lastPriceList) )
 
         // try live update
@@ -68,7 +63,7 @@ class ChartViewController: UIViewController {
 
 
 
-    fileprivate func addSurface() {
+    fileprivate func addWhiteSurface() {
         surface = SCIChartSurface(frame: self.chartView.bounds)
         surface.translatesAutoresizingMaskIntoConstraints = true
         surface.frame = self.chartView.bounds
@@ -82,7 +77,7 @@ class ChartViewController: UIViewController {
 
     // surface.renderableSeriesAreaBorder.color = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
 
-    fileprivate func addAxis(BarsToShow: Int) {
+    fileprivate func addWhiteAxis(BarsToShow: Int) {
 
         let totalBars = lastPriceList.count
         let rangeStart = totalBars - BarsToShow
@@ -166,15 +161,6 @@ class ChartViewController: UIViewController {
         surface.yAxes.add(yAxis)
     }
 
-//    @IBAction func daysStepper(_ sender: UIStepper) {
-//        let stepperNumber = Int(sender.value)
-//        daysLabel.text = "\(sender.value) Days"
-//        let totalBars = lastPriceList.count
-//        let rangeStart = totalBars - stepperNumber
-//        // horizontal - Date axis
-//        xAxis.visibleRange = SCIDoubleRange(min: SCIGeneric(rangeStart), max: SCIGeneric(totalBars))
-//    }
-
     @IBAction func dayStepperButton(_ sender: UIStepper) {
         let stepperNumber = Int(sender.value)
         daysLabel.text = "\(sender.value) Days"
@@ -184,7 +170,7 @@ class ChartViewController: UIViewController {
         xAxis.visibleRange = SCIDoubleRange(min: SCIGeneric(rangeStart), max: SCIGeneric(totalBars))
     }
     
-    fileprivate func addDataSeries() {
+    fileprivate func addWhiteDataSeries() {
         let upBrush = SCISolidBrushStyle(color: .red)
         let downBrush = SCISolidBrushStyle(color: .red)
         let darkGrayPen = SCISolidPenStyle(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), withThickness: 0.5)
