@@ -59,9 +59,9 @@ class DateHelper {
         //if ( debug ) { print( "These 2 match and are correct!!") }
         
         // calc local equivilant of server time stamp
-        formatter.timeZone = TimeZone(abbreviation: "GMT+1:00")
+        formatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
         let serverDate = formatter.date(from: serverString)
-        if ( debug ) { print("3. Date from server str: \(serverDate!)     @ 10:30 +2 and correct @ 11:00 +1 and corrrect") }
+        if ( debug ) { print("3. Date from server str: \(serverDate!)     @ 10:30 +2 and correct @ 11:00 +1 and corrrect, 12:00 + 1 not correct 11AM +0 correct 12:30 +0 correct") }
         
         // calc local equivilant of server hour:min stamp
         formatter.dateFormat = "HH:mm a"

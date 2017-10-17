@@ -11,6 +11,7 @@
      [ ] chart
      [ ] notifications
      [ ] reset circle at 0
+     [ ] fix main UI bottom Nav
      [ ] black chart
 */
 import UIKit
@@ -63,6 +64,7 @@ class UpdateViewController: UIViewController {
 
     func annimateCircle(alert:Int, reset: Bool) {
         
+        print("Inside AniimateCircle alert: \(alert), reset: \(reset)")
         let replicatorLayer = CAReplicatorLayer()
         if ( reset ) {
             replicatorLayer.removeFromSuperlayer()
@@ -255,8 +257,9 @@ class UpdateViewController: UIViewController {
                 print("\nSending Data to animation circle! lastCommectionTotal: \(lastConnectionMinuteTotal) if 0 then reset!")
                 var reset = false
                 if ( lastConnectionMinuteTotal < 5 ) {
-                    print("Reset circle because MinTotal = \(lastConnectionMinuteTotal)")
-                    reset = true}
+                    reset = true
+                    print("Reset circle because MinTotal = \(lastConnectionMinuteTotal) reset = \(reset)")
+                    }
                 annimateCircle(alert: lastConnectionMinuteTotal, reset: reset)
                 priceCurrentLabel.text = "\(alert.1):\(alert.2) elapsed"                                        // lower left low
             }
