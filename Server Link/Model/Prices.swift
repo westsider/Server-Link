@@ -23,6 +23,7 @@ class LastPrice {
     
     var ticker: String?
     var date: Date?
+    var stringDate: String?
     var open: Double?
     var high: Double?
     var low: Double?
@@ -47,12 +48,13 @@ class LastPrice {
     //MARK: - TODO add NSDATE from server
     //var barTime:Date?
     
-    init(ticker: String, date: Date, open: Double, high:Double, low:Double,
+    init(ticker: String, date: Date, stringDate:String, open: Double, high:Double, low:Double,
          close:Double, volume:Double, signal:Double, trade:Double, bartype:String,
          connectStatus:String, connectTime:String, longEntryPrice:Double,
          shortEntryPrice:Double, longLineLength:Int, shortLineLength:Int, currentBar:Int, inLong:Bool, inShort:Bool) {
         self.ticker = ticker
         self.date = date
+        self.stringDate = stringDate
         self.open = open
         self.high = high
         self.low = low

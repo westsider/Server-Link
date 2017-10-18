@@ -5,15 +5,7 @@
 //  Created by Warren Hansen on 10/16/17.
 //  Copyright © 2017 Warren Hansen. All rights reserved.
 //
-/*
-//MARK: - TODO
-     [X] tableview
-     [X] chart
-     [ ] notifications
-     [?] reset circle at 0, confirm on Weds, unsure if I am resetting
-     [ ] fix main UI bottom Nav
-     [X] black chart
-*/
+
 import UIKit
 import UserNotifications
 
@@ -234,6 +226,50 @@ class UpdateViewController: UIViewController {
     
     // problem area -----------------------------------------------------------------------------------
     // may fail to work in other time zones
+//    func serverConnectedLable(lastUpdate: LastPrice, debug: Bool) {  // update devery 5 min RTH
+//
+//        if (debug) {
+//            serverConnectTime?.text = "sConTime"
+//            priceCurrentLabel.text = "pCurLabel"
+//            lastUpdateTime.text =  "lUpdateTime"
+//        } else {
+//            if let lastTime = lastUpdate.date {
+//
+//                let serverDateString = DateHelper().convertServeDateToLocal(server: lastTime, debug: true)
+//                let local = DateHelper().convertUTCtoLocal(debug: false, UTC: Date())
+//                let alert = DateHelper().calcDiffInMinHours(from: local, server: serverDateString.0, debug: true)
+//
+//                if ( alert.0 ) {
+//                    print("\nSending late update alert!\n")
+//                    let myContent = ["Server Status", "Update is Late", "Last update was \(alert.1):\(alert.2) ago"]
+//                    sendNotification(content: myContent)
+//                }
+//
+//                lastUpdateTime.text = serverDateString.1   // lower left high
+//                let lastConnectionMinuteTotal = alert.3
+//                print("\nSending Data to animation circle! lastCommectionTotal: \(lastConnectionMinuteTotal) if 0 then reset!")
+//                var reset = false
+//                if ( lastConnectionMinuteTotal < 5 ) {
+//                    reset = true
+//                    print("Reset circle because MinTotal = \(lastConnectionMinuteTotal) reset = \(reset)")
+//                    }
+//                annimateCircle(alert: lastConnectionMinuteTotal, reset: reset)
+//                priceCurrentLabel.text = "\(alert.1):\(alert.2) elapsed"                                        // lower left low
+//            }
+//
+//            if let serverDateTime = lastUpdate.connectTime {
+//                let serverDateTimeArr = serverDateTime.components(separatedBy: " ")
+//                if ( serverDateTimeArr.count < 3 ) {
+//                    serverConnectTime?.text = "parse time fail"               // Bottom -  upper right
+//                    return
+//                }
+//                serverConnectTime?.text = "\(serverDateTimeArr[1]) \(serverDateTimeArr[2])"     // Bottom -  upper right
+//            } else {
+//                serverConnectTime?.text = "No Data"                 // Bottom -  upper right
+//            }
+//        }
+//    }
+
     func serverConnectedLable(lastUpdate: LastPrice, debug: Bool) {  // update devery 5 min RTH
         
         if (debug) {
@@ -241,26 +277,26 @@ class UpdateViewController: UIViewController {
             priceCurrentLabel.text = "pCurLabel"
             lastUpdateTime.text =  "lUpdateTime"
         } else {
-            if let lastTime = lastUpdate.date {
+            if let lastTime = lastUpdate.stringDate {
                 
-                let serverDateString = DateHelper().convertServeDateToLocal(server: lastTime, debug: true)
-                let local = DateHelper().convertUTCtoLocal(debug: false, UTC: Date())
-                let alert = DateHelper().calcDiffInMinHours(from: local, server: serverDateString.0, debug: true)
-                
+                let localNowA = DateHelper().convertUTCtoLocal(debug: false, UTC: Date())
+                let serverStamp = DateHelper().convertServerToLocal(date: lastTime)
+                let serverDateString = DateHelper().convertServerDateToHourMin(serverDate: serverStamp)
+                let alert = DateHelper().calcDiffMinHours(lastUpdate: serverStamp, localNow: localNowA, debug: false)
                 if ( alert.0 ) {
                     print("\nSending late update alert!\n")
                     let myContent = ["Server Status", "Update is Late", "Last update was \(alert.1):\(alert.2) ago"]
                     sendNotification(content: myContent)
                 }
                 
-                lastUpdateTime.text = serverDateString.2   // lower left high
+                lastUpdateTime.text = serverDateString   // lower left high
                 let lastConnectionMinuteTotal = alert.3
                 print("\nSending Data to animation circle! lastCommectionTotal: \(lastConnectionMinuteTotal) if 0 then reset!")
                 var reset = false
                 if ( lastConnectionMinuteTotal < 5 ) {
                     reset = true
                     print("Reset circle because MinTotal = \(lastConnectionMinuteTotal) reset = \(reset)")
-                    }
+                }
                 annimateCircle(alert: lastConnectionMinuteTotal, reset: reset)
                 priceCurrentLabel.text = "\(alert.1):\(alert.2) elapsed"                                        // lower left low
             }

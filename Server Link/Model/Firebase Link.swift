@@ -54,6 +54,7 @@ class FirebaseLink {
                     
                     let ticker  = data?["ticker"] as! String
                     let date    = DateHelper().convertToDateFrom(string: data?["date"] as! String )
+                    let strDate = data?["date"] as! String
                     let open    = data?["open"] as! Double
                     let high    = data?["high"] as! Double
                     let low     = data?["low"] as! Double
@@ -86,7 +87,7 @@ class FirebaseLink {
                     let inLong = data?["inLong"] as! Bool  // = (boolValue as! CFBoolean) as Bool
                     let inShort = data?["inShort"] as! Bool
                     
-                    let lastPrice = LastPrice(ticker: ticker, date: date, open: open ,
+                    let lastPrice = LastPrice(ticker: ticker, date: date, stringDate: strDate, open: open ,
                                               high: high, low: low, close: close, volume: 10000,
                                               signal: signal, trade: trade, bartype: bartype,
                                               connectStatus: connectStatus, connectTime: connectTime,
