@@ -53,7 +53,7 @@ class FirebaseLink {
                     let data    = items.value as? [String: AnyObject]
                     
                     let ticker  = data?["ticker"] as! String
-                    let date    = DateHelper().convertToDateFrom(string: data?["date"] as! String )
+                    let date    = DateHelper().convertToDateFrom(string: data?["date"] as! String, debug: false )
                     let strDate = data?["date"] as! String
                     let open    = data?["open"] as! Double
                     let high    = data?["high"] as! Double

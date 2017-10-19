@@ -29,6 +29,7 @@
 		04A73A79AE122E64D0A27E8B /* Pods_Server_Link.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Server_Link.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D12C7FD1F95FAFB005C3D3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D12C7FF1F95FCA0005C3D3F /* Time Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Time Utility.swift"; sourceTree = "<group>"; };
+		0D1A29CC1F992D2C0018ABFD /* Server Link.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Server Link.entitlements"; sourceTree = "<group>"; };
 		0D34B21F1F95DFB600BDCEBB /* SCIGenericWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SCIGenericWrapper.swift; path = SciChart_iOS_v2.0.0.1640_SDK/SciChart.framework/SwiftUtil/SCIGenericWrapper.swift; sourceTree = "<group>"; };
 		0D819AA81F958B1A0096B5EB /* Server Link.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Server Link.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D819AAB1F958B1A0096B5EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,9 +109,10 @@
 		0D819AAA1F958B1A0096B5EB /* Server Link */ = {
 			isa = PBXGroup;
 			children = (
+				0D1A29CC1F992D2C0018ABFD /* Server Link.entitlements */,
 				0D819AAF1F958B1A0096B5EB /* Main.storyboard */,
-				0D34B2221F95DFD700BDCEBB /* Model */,
 				0D34B2211F95DFCC00BDCEBB /* Controller */,
+				0D34B2221F95DFD700BDCEBB /* Model */,
 				0D819AB21F958B1A0096B5EB /* Assets.xcassets */,
 				0D819AAB1F958B1A0096B5EB /* AppDelegate.swift */,
 				0D819AB41F958B1A0096B5EB /* LaunchScreen.storyboard */,
@@ -172,6 +174,11 @@
 					0D819AA71F958B1A0096B5EB = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -408,6 +415,7 @@
 			baseConfigurationReference = 3537C1C6AE38E8666ACD3B1E /* Pods-Server Link.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Server Link/Server Link.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22U4CL887R;
 				INFOPLIST_FILE = "Server Link/Info.plist";
@@ -425,6 +433,7 @@
 			baseConfigurationReference = 34F205D865B8303CCF58BE37 /* Pods-Server Link.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Server Link/Server Link.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22U4CL887R;
 				INFOPLIST_FILE = "Server Link/Info.plist";

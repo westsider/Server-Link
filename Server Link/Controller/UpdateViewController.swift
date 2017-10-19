@@ -53,7 +53,7 @@ class UpdateViewController: UIViewController {
                 self.updateUISegmented()
             }
         }
-        //initNotificaationSetupCheck()
+        initNotificaationSetupCheck()
     }
 
     func annimateCircle(alert:Int, reset: Bool) {
@@ -103,27 +103,28 @@ class UpdateViewController: UIViewController {
         }
     }
 
-//    func initNotificaationSetupCheck() {
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge ])
-//        { ( success, error) in
-//            if success {
-//                print("\n*** Notifiation Permission Granted ***\n")
-//            } else {
-//                print("\n------------ There was a problem with permissions ---------------\n\(String(describing: error))")
-//            }
-//        }
-//    }
+    func initNotificaationSetupCheck() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge ])
+        { ( success, error) in
+            if success {
+                print("\n*** Notifiation Permission Granted ***\n")
+            } else {
+                print("\n------------ There was a problem with permissions ---------------\n\(String(describing: error))")
+            }
+        }
+    }
 
     func sendNotification(content: [String]) {
-//        let notification = UNMutableNotificationContent()
-//        notification.title = content[0]
-//        notification.subtitle = content[1]
-//        notification.body = content[2]
-//        notification.sound = UNNotificationSound.default()
-//
-//        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-//        let request = UNNotificationRequest(identifier: "Notification1", content: notification, trigger: notificationTrigger)
-//        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        print("\nInside send notifications!\n")
+        let notification = UNMutableNotificationContent()
+        notification.title = content[0]
+        notification.subtitle = content[1]
+        notification.body = content[2]
+        notification.sound = UNNotificationSound.default()
+
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: "Notification1", content: notification, trigger: notificationTrigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
     @IBAction func toobarTableViewAction(_ sender: Any) {
