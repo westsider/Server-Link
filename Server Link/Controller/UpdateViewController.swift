@@ -40,6 +40,8 @@ class UpdateViewController: UIViewController {
     
     var alertForAnnimation = 0 //  [0, 5,10,15,20,25,30,35, 40, 45]
     
+    let replicatorLayer = CAReplicatorLayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,7 +59,7 @@ class UpdateViewController: UIViewController {
     func annimateCircle(alert:Int, reset: Bool) {
         
         print("Inside AniimateCircle alert: \(alert), reset: \(reset)")
-        let replicatorLayer = CAReplicatorLayer()
+        
         if ( reset ) {
             print("Got the call to reset, removeFromSuperLayer()")
             replicatorLayer.removeFromSuperlayer()
@@ -224,51 +226,6 @@ class UpdateViewController: UIViewController {
         // this automatically syncs after 1st hour
     }
     
-    // problem area -----------------------------------------------------------------------------------
-    // may fail to work in other time zones
-//    func serverConnectedLable(lastUpdate: LastPrice, debug: Bool) {  // update devery 5 min RTH
-//
-//        if (debug) {
-//            serverConnectTime?.text = "sConTime"
-//            priceCurrentLabel.text = "pCurLabel"
-//            lastUpdateTime.text =  "lUpdateTime"
-//        } else {
-//            if let lastTime = lastUpdate.date {
-//
-//                let serverDateString = DateHelper().convertServeDateToLocal(server: lastTime, debug: true)
-//                let local = DateHelper().convertUTCtoLocal(debug: false, UTC: Date())
-//                let alert = DateHelper().calcDiffInMinHours(from: local, server: serverDateString.0, debug: true)
-//
-//                if ( alert.0 ) {
-//                    print("\nSending late update alert!\n")
-//                    let myContent = ["Server Status", "Update is Late", "Last update was \(alert.1):\(alert.2) ago"]
-//                    sendNotification(content: myContent)
-//                }
-//
-//                lastUpdateTime.text = serverDateString.1   // lower left high
-//                let lastConnectionMinuteTotal = alert.3
-//                print("\nSending Data to animation circle! lastCommectionTotal: \(lastConnectionMinuteTotal) if 0 then reset!")
-//                var reset = false
-//                if ( lastConnectionMinuteTotal < 5 ) {
-//                    reset = true
-//                    print("Reset circle because MinTotal = \(lastConnectionMinuteTotal) reset = \(reset)")
-//                    }
-//                annimateCircle(alert: lastConnectionMinuteTotal, reset: reset)
-//                priceCurrentLabel.text = "\(alert.1):\(alert.2) elapsed"                                        // lower left low
-//            }
-//
-//            if let serverDateTime = lastUpdate.connectTime {
-//                let serverDateTimeArr = serverDateTime.components(separatedBy: " ")
-//                if ( serverDateTimeArr.count < 3 ) {
-//                    serverConnectTime?.text = "parse time fail"               // Bottom -  upper right
-//                    return
-//                }
-//                serverConnectTime?.text = "\(serverDateTimeArr[1]) \(serverDateTimeArr[2])"     // Bottom -  upper right
-//            } else {
-//                serverConnectTime?.text = "No Data"                 // Bottom -  upper right
-//            }
-//        }
-//    }
 
     func serverConnectedLable(lastUpdate: LastPrice, debug: Bool) {  // update devery 5 min RTH
         
@@ -293,7 +250,7 @@ class UpdateViewController: UIViewController {
                 let lastConnectionMinuteTotal = alert.3
                 print("\nSending Data to animation circle! lastCommectionTotal: \(lastConnectionMinuteTotal) if 0 then reset!")
                 var reset = false
-                if ( lastConnectionMinuteTotal < 5 ) {
+                if ( lastConnectionMinuteTotal < 8 ) {
                     reset = true
                     print("Reset circle because MinTotal = \(lastConnectionMinuteTotal) reset = \(reset)")
                 }

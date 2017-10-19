@@ -13,8 +13,6 @@ import SciChart
 class ChartViewController: UIViewController {
     
     @IBOutlet weak var chartView: UIView!
-
-    @IBOutlet weak var daysLabel: UILabel!
     
     @IBOutlet weak var stepper: UIStepper!
  
@@ -41,12 +39,11 @@ class ChartViewController: UIViewController {
         super.viewDidLoad()
         
         if ( blackChart ) {
-            navigationController?.navigationBar.barTintColor = UIColor.darkText
+            //navigationController?.navigationBar.barTintColor = UIColor.darkText
             
-            navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
+            //navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
             view.backgroundColor = UIColor.black
             stepper.tintColor = UIColor.lightGray
-            daysLabel.textColor = UIColor.lightGray
             addBlackSurface()
         } else {
             addWhiteSurface()
@@ -280,7 +277,6 @@ yAxis.style.gridBandBrush = SCISolidBrushStyle(color: .black)
     
     @IBAction func dayStepperButton(_ sender: UIStepper) {
         let stepperNumber = Int(sender.value)
-        daysLabel.text = "\(sender.value) Days"
         let totalBars = lastPriceList.count
         let rangeStart = totalBars - stepperNumber
         // horizontal - Date axis
